@@ -1,0 +1,79 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Panel · Canela Negra</title><meta name="robots" content="noindex,nofollow"><link rel="icon" href="../favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--n:#1f2b7a;--k:#14161c;--c:#f2e5d5}*{box-sizing:border-box}body{margin:0;background:var(--c);color:var(--k);font-family:"DM Sans",sans-serif;font-size:17px}
+.demo{background:#b3261e;color:#fff;font-size:12px;text-align:center;padding:5px}
+header{background:var(--k);color:var(--c);display:flex;align-items:center;gap:10px;padding:10px 14px;position:sticky;top:0;z-index:5}header img{width:40px;border-radius:50%}header b{flex:1;font-family:Fraunces,serif}
+.hb{background:var(--c);color:var(--k);border:0;border-radius:999px;padding:9px 14px;font:700 14px "DM Sans";display:inline-flex;gap:6px;align-items:center}.hb svg{width:18px}
+main{max-width:520px;margin:auto;padding:18px 16px 60px}h1,h2{font-family:Fraunces,serif;margin:6px 0 4px}p.s{color:#5b6275;margin:0 0 16px}
+.home{display:grid;grid-template-columns:1fr 1fr;gap:12px}.home button{background:#fff;border:0;border-radius:24px;padding:20px 14px;text-align:left;font:700 17px "DM Sans";box-shadow:0 4px 14px rgba(0,0,0,.06);min-height:130px}
+.home button svg{width:34px;height:34px;color:var(--n);display:block;margin-bottom:10px}.home button.big{grid-column:1/-1;background:var(--n);color:#fff}.home button.big svg{color:var(--c)}
+label{display:block;font-weight:700;margin:14px 0 6px}input{width:100%;font-size:19px;padding:15px 18px;border-radius:18px;border:2px solid #d8c9b4;background:#fff}input:focus{outline:none;border-color:var(--n)}
+.btn{width:100%;margin-top:16px;padding:17px;border:0;border-radius:999px;background:var(--n);color:#fff;font:700 18px "DM Sans"}.btn.sec{background:#fff;color:var(--k);border:2px solid var(--k)}.btn.k{background:var(--k)}
+.back{background:none;border:0;font:600 16px "DM Sans";color:var(--n);padding:0;margin-bottom:6px}
+.msg{border-radius:18px;padding:14px 16px;margin-top:14px;font-weight:500}.ok{background:#e1f1e3;color:#1d5b2a}.bad{background:#fde3e0;color:#8a1c12}
+.cl{background:#fff;border-radius:22px;padding:16px;margin-bottom:12px}.cl .t{display:flex;justify-content:space-between;gap:8px}.cl small{color:#5b6275}
+.dots{display:flex;gap:5px;margin:10px 0}.dots span{flex:1;aspect-ratio:1;border-radius:50%;background:#eadfcd;max-width:26px}.dots span.on{background:var(--k)}
+.pz{background:var(--k);color:var(--c);border-radius:999px;padding:3px 10px;font-size:13px;font-weight:700}
+.mini{border:0;border-radius:999px;padding:10px 14px;font:700 14px "DM Sans";background:var(--c);margin:4px 4px 0 0}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:flex-end;justify-content:center;z-index:9}.ov.on{display:flex}
+.sh{background:#fff;border-radius:28px 28px 0 0;width:100%;max-width:560px;max-height:92vh;overflow:auto;padding:20px}
+.mail{border:1px solid #e5d9c7;border-radius:20px;overflow:hidden;margin:12px 0}.mail .h{background:var(--k);color:var(--c);text-align:center;padding:18px}.mail .h img{width:64px;border-radius:50%}.mail .b{padding:18px;background:var(--c)}
+.tag{background:#b3261e;color:#fff;font-size:12px;font-weight:700;border-radius:999px;padding:3px 10px}
+#login{max-width:400px;margin:40px auto;padding:20px;text-align:center}#login img{width:110px;border-radius:50%}
+</style></head><body>
+<div class="demo">DEMO de propuesta Lokio · datos de prueba en este teléfono · los correos NO se envían</div>
+<div id="login"><img src="../logo.png" alt="Canela Negra"><h1>Panel Canela Negra</h1><p class="s">Escribe tu clave para entrar.</p><input id="pw" type="password" placeholder="Clave" onkeydown="if(event.key=='Enter')entrar()"><button class="btn" onclick="entrar()">Entrar</button><p class="msg bad" id="pe" style="display:none">Clave incorrecta. Revísala e inténtalo otra vez.</p></div>
+<div id="app" style="display:none"><header><img src="../logo.png" alt=""><b>Fidelización</b>
+<button class="hb" onclick="ayuda()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg>Ayuda</button>
+<button class="hb" onclick="salir()">Salir</button></header><main id="m"></main></div>
+<div class="ov" id="ov" onclick="if(event.target==this)cerrar()"><div class="sh" id="sh"></div></div>
+<script src="../fid.js"></script><script>
+const PASS='canela-demo';// SOLO DEMO
+const $=id=>document.getElementById(id),esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const I={sello:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>',user:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0M19 8v6M16 11h6"/></svg>',list:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>',cog:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-2.9 1.2V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-2.9-1.2l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1A1.7 1.7 0 0 0 3 15H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.2-2.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1A1.7 1.7 0 0 0 10 4V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 2.9 1.2l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1A1.7 1.7 0 0 0 21 10h.1a2 2 0 1 1 0 4z"/></svg>'};
+let pantalla='inicio';
+function entrar(){if($('pw').value===PASS){sessionStorage.cn_ok=1;abrir()}else $('pe').style.display='block'}
+function abrir(){$('login').style.display='none';$('app').style.display='block';ir('inicio');if(!localStorage.cn_tour){localStorage.cn_tour=1;tour(0)}}
+function salir(){sessionStorage.removeItem('cn_ok');location.reload()}
+function ir(p,x){pantalla=p;const d=FID.db(),m=$('m'),back='<button class="back" onclick="ir(\'inicio\')">‹ Volver al inicio</button>';
+if(p=='inicio'){const n=Object.keys(d.clientes).length,c=Object.values(d.clientes).filter(c=>c.stickers>=d.meta).length;
+m.innerHTML=`<h1>Hola</h1><p class="s">${n} clientes registrados · ${c} con premio listo</p><div class="home">
+<button class="big" onclick="ir('visita')">${I.sello}Sumar sticker<br><small style="font-weight:400">Cliente que compró hoy</small></button>
+<button onclick="ir('nuevo')">${I.user}Nuevo cliente</button><button onclick="ir('clientes')">${I.list}Ver clientes</button>
+<button onclick="ir('ajustes')" style="grid-column:1/-1;min-height:auto">${I.cog}Ajustes y mi correo</button></div>`}
+if(p=='visita'){m.innerHTML=back+`<h2>Sumar sticker</h2><p class="s">Escribe el RUT del cliente y toca el botón.</p><label for="vr">RUT del cliente</label><input id="vr" placeholder="12.345.678-5" value="${esc(x||'')}"><button class="btn" onclick="sumar()">Sumar 1 sticker</button><div id="vm"></div>`;$('vr').focus()}
+if(p=='nuevo'){m.innerHTML=back+`<h2>Nuevo cliente</h2><p class="s">Solo una vez por cliente. Después solo usas su RUT.</p><label>RUT</label><input id="nr" placeholder="12.345.678-5" value="${esc(x||'')}"><label>Nombre</label><input id="nn" placeholder="Ej: Camila Rojas"><label>Correo</label><input id="nc" type="email" inputmode="email" placeholder="camila@correo.cl"><label style="font-weight:400;display:flex;gap:8px;align-items:center"><input type="checkbox" id="np" style="width:auto" checked> Sumar su primer sticker ahora</label><button class="btn" onclick="crear()">Guardar cliente</button><div id="nm"></div>`}
+if(p=='clientes'){const L=Object.entries(d.clientes).sort((a,b)=>b[1].stickers-a[1].stickers);
+m.innerHTML=back+`<h2>Clientes</h2><input id="q" placeholder="Buscar por nombre o RUT" oninput="filtra()" style="margin-bottom:14px"><div id="lst">${L.length?L.map(([r,c])=>{const f=d.meta-c.stickers;return `<div class="cl" data-q="${esc((c.nombre+r).toLowerCase())}"><div class="t"><div><b>${esc(c.nombre)}</b><br><small>${FID.fmt(r)} · ${esc(c.correo)}</small></div><div>${c.stickers>=d.meta?'<span class="pz">PREMIO</span>':`<b>${c.stickers}/${d.meta}</b>`}</div></div><div class="dots">${Array.from({length:d.meta},(_,i)=>`<span class="${i<c.stickers?'on':''}"></span>`).join('')}</div>
+${c.stickers>=d.meta?`<button class="mini" style="background:var(--k);color:var(--c)" onclick="canje('${r}')">Entregar premio</button>`:`<button class="mini" onclick="ir('visita','${r}')">Sumar sticker</button><button class="mini" onclick="correo('${r}')">Enviar recordatorio (faltan ${f})</button>`}</div>`}).join(''):'<p>Aún no hay clientes. Toca "Volver" y luego "Nuevo cliente".</p>'}</div>`}
+if(p=='ajustes'){m.innerHTML=back+`<h2>Ajustes</h2><p class="s">Tu correo es el que verán tus clientes como remitente y donde recibes avisos.</p><label>Tu correo (dueño)</label><input id="ac" type="email" value="${esc(d.correo)}" placeholder="hola@canelanegra.cl"><label>Stickers para el premio</label><input id="am" type="number" min="3" max="20" value="${d.meta}"><label>Premio</label><input id="ap" value="${esc(d.premio)}"><button class="btn" onclick="guardaAj()">Guardar ajustes</button><div id="am2"></div><button class="btn sec" onclick="ejemplo()">Cargar clientes de ejemplo</button><button class="btn sec" onclick="if(confirm('¿Borrar todos los datos de prueba? No se puede deshacer.')){localStorage.removeItem(FID.K);ir('inicio')}">Borrar datos de prueba</button>`}}
+function msg(id,ok,t){$(id).innerHTML=`<div class="msg ${ok?'ok':'bad'}">${t}</div>`}
+function sumar(){const r=FID.limpia($('vr').value);if(!FID.valido(r))return msg('vm',0,'Ese RUT no es válido. Revisa los números y el dígito final (puede ser K).');
+const d=FID.db(),c=d.clientes[r];if(!c)return $('vm').innerHTML=`<div class="msg bad">Este RUT aún no está registrado.</div><button class="btn k" onclick="ir('nuevo','${r}')">Registrarlo ahora</button>`;
+if(c.stickers>=d.meta)return msg('vm',0,`${esc(c.nombre)} ya completó su tarjeta. Entrega su premio en "Ver clientes".`);
+c.stickers++;d.log.push([r,Date.now()]);FID.save(d);const f=d.meta-c.stickers;
+msg('vm',1,f<=0?`¡Listo! ${esc(c.nombre)} completó su tarjeta. Premio: ${esc(d.premio)}.`:`¡Listo! ${esc(c.nombre)} lleva ${c.stickers} de ${d.meta}. Le faltan ${f}.`);$('vr').value=''}
+function crear(){const r=FID.limpia($('nr').value),n=$('nn').value.trim(),c=$('nc').value.trim(),d=FID.db();
+if(!FID.valido(r))return msg('nm',0,'Ese RUT no es válido. Revisa los números y el dígito final.');if(d.clientes[r])return msg('nm',0,'Ese RUT ya está registrado. Usa "Sumar sticker".');
+if(!n)return msg('nm',0,'Falta el nombre.');if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(c))return msg('nm',0,'El correo no se ve bien. Ejemplo: nombre@gmail.com');
+d.clientes[r]={nombre:n,correo:c,stickers:$('np').checked?1:0,alta:Date.now()};FID.save(d);msg('nm',1,`¡${esc(n)} quedó registrado!`);['nr','nn','nc'].forEach(i=>$(i).value='')}
+function canje(r){const d=FID.db();if(!confirm(`¿Entregaste el premio a ${d.clientes[r].nombre}? Su tarjeta vuelve a 0.`))return;d.clientes[r].stickers=0;FID.save(d);ir('clientes')}
+function filtra(){const q=$('q').value.toLowerCase().replace(/[.\-]/g,'');document.querySelectorAll('.cl').forEach(e=>e.style.display=e.dataset.q.includes(q)?'':'none')}
+function guardaAj(){const d=FID.db(),c=$('ac').value.trim();if(c&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(c))return msg('am2',0,'El correo no se ve bien.');d.correo=c;d.meta=Math.max(3,Math.min(20,+$('am').value||10));d.premio=$('ap').value.trim()||'Un café de regalo';FID.save(d);msg('am2',1,'Guardado.')}
+function correo(r){const d=FID.db(),c=d.clientes[r],f=d.meta-c.stickers;
+$('sh').innerHTML=`<span class="tag">VISTA PREVIA · DEMO</span><p style="margin:10px 0 0"><b>De:</b> Canela Negra &lt;${esc(d.correo||'(configura tu correo en Ajustes)')}&gt;<br><b>Para:</b> ${esc(c.correo)}<br><b>Asunto:</b> ${esc(c.nombre.split(' ')[0])}, te faltan ${f} stickers para tu premio</p>
+<div class="mail"><div class="h"><img src="../logo.png" alt=""><div style="font-family:Fraunces,serif;letter-spacing:.06em;margin-top:6px">TARJETA DE FIDELIDAD</div></div><div class="b"><p>Hola ${esc(c.nombre.split(' ')[0])}:</p><p>Llevas <b>${c.stickers} de ${d.meta}</b> stickers. ¡Te faltan solo <b>${f}</b> para ${esc(d.premio.toLowerCase())}!</p><div class="dots">${Array.from({length:d.meta},(_,i)=>`<span class="${i<c.stickers?'on':''}"></span>`).join('')}</div><p>Te esperamos en Av. Rondizzoni 2036, frente al Parque O'Higgins.</p><p style="font-size:13px;color:#5b6275">Canela Negra · cafetería y heladería</p></div></div>
+<button class="btn" onclick="this.outerHTML='<div class=\\'msg ok\\'>Envío SIMULADO (demo): en la versión real este correo le llega a ${esc(c.correo)}.</div>'">Enviar (simulado)</button><button class="btn sec" onclick="cerrar()">Cerrar</button>`;$('ov').classList.add('on')}
+function cerrar(){$('ov').classList.remove('on')}
+const T={inicio:['Esta es tu pantalla de inicio. Desde aquí haces todo.','El botón azul "Sumar sticker" es el que más vas a usar: cada vez que un cliente compra.','"Nuevo cliente" lo registra con RUT, nombre y correo. "Ver clientes" muestra cuánto lleva cada uno.','En "Ajustes" pones tu correo y cuál es el premio. El botón Ayuda siempre está arriba.'],
+visita:['Escribe el RUT del cliente, con o sin puntos y guion.','Toca "Sumar 1 sticker". Si el RUT no está registrado, te ofrecemos registrarlo.'],
+nuevo:['Escribe RUT, nombre y correo del cliente.','Deja marcado "Sumar su primer sticker" si compró hoy, y toca Guardar.'],
+clientes:['Aquí ves a todos y cuántos stickers llevan.','Con "Enviar recordatorio" le mandas un correo que le dice cuántos le faltan.','Cuando completa, aparece PREMIO: tócalo al entregarlo y su tarjeta vuelve a 0.'],
+ajustes:['Pon tu correo: será el remitente de los recordatorios.','Puedes cambiar cuántos stickers se necesitan y cuál es el premio.']};
+function tour(i,lista){lista=lista||[].concat(...Object.values(T));$('sh').innerHTML=`<span class="tag" style="background:var(--n)">Tutorial ${i+1}/${lista.length}</span><p style="font-size:19px">${lista[i]}</p>${i<lista.length-1?`<button class="btn" id="tn">Siguiente</button>`:'<button class="btn" onclick="cerrar()">¡Entendido!</button>'}<button class="btn sec" onclick="cerrar()">Cerrar</button>`;if($('tn'))$('tn').onclick=()=>tour(i+1,lista);$('ov').classList.add('on')}
+function ayuda(){$('sh').innerHTML=`<h2>Ayuda</h2><p>¿Qué quieres repasar?</p><button class="btn" id="a1">Tutorial de esta pantalla</button><button class="btn k" id="a2">Tutorial completo</button><button class="btn sec" onclick="cerrar()">Cerrar</button>`;$('a1').onclick=()=>tour(0,T[pantalla]);$('a2').onclick=()=>tour(0);$('ov').classList.add('on')}
+function ejemplo(){const d=FID.db();// datos FICTICIOS de prueba, RUT válidos inventados
+[['111111111','Cliente de prueba 1','prueba1@ejemplo.cl',7],['222222222','Cliente de prueba 2','prueba2@ejemplo.cl',3],['333333333','Cliente de prueba 3','prueba3@ejemplo.cl',10]].forEach(([r,n,c,s])=>{if(FID.valido(r))d.clientes[r]={nombre:n,correo:c,stickers:s,alta:Date.now()}});FID.save(d);ir('clientes')}
+if(sessionStorage.cn_ok)abrir();
+</script></body></html>
