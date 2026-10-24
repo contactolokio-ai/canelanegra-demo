@@ -52,6 +52,8 @@ h2{font-size:clamp(24px,6vw,32px);margin-bottom:8px}
 .tabs button{border:0;background:transparent;min-height:44px;padding:10px 10px;font:700 13px "IBM Plex Sans";color:var(--mute);white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-1px;cursor:pointer;flex:0 0 auto}
 .tabs button.on{color:var(--ink);border-bottom-color:var(--ink)}
 .tabs button:last-child{margin-right:8px}
+.tabs{-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 calc(100% - 28px),transparent 100%);mask-image:linear-gradient(90deg,#000 0%,#000 calc(100% - 28px),transparent 100%)}
+#carta{padding-bottom:96px}
 #carta .wrap,#grid,.menu{max-width:100%;min-width:0;overflow-x:clip}
 .menu{border-top:1px solid var(--line);width:100%}
 .menu-row{display:grid;grid-template-columns:56px minmax(0,1fr);gap:10px 12px;align-items:start;padding:14px 0;border-bottom:1px solid var(--line);width:100%;max-width:100%;min-width:0}
@@ -150,6 +152,8 @@ footer .lk i{color:#ff4f17;font-style:normal;font-weight:700}
   .box .ctas .btn{width:auto;flex:0 1 auto}
   .fab{display:none}
   main{padding-bottom:0}
+  #carta{padding-bottom:44px}
+  .tabs{-webkit-mask-image:none;mask-image:none}
   footer{padding:36px 0 40px}
   .pcard{padding:20px 18px;max-width:none}
   .stamps{gap:8px}

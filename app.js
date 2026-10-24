@@ -66,3 +66,24 @@ Object.keys(MENU).forEach(k => {
   tabs.appendChild(b);
 });
 show("Café");
+
+
+/* FAB: ocultar si ya estás en carta o más abajo (evita tapar ítems) */
+(function(){
+  const fab=document.querySelector('.fab');
+  const carta=document.querySelector('#carta');
+  if(!fab||!carta||!('IntersectionObserver' in window)) return;
+  const io=new IntersectionObserver((entries)=>{
+    for(const e of entries){
+      if(e.isIntersecting && e.intersectionRatio>0.15) fab.style.display='none';
+      else if(window.scrollY < carta.offsetTop - 80) fab.style.display='';
+    }
+  },{threshold:[0,0.15,0.4]});
+  io.observe(carta);
+  const sync=()=>{
+    if(window.matchMedia('(min-width:768px)').matches){fab.style.display='none';return;}
+    fab.style.display = (window.scrollY + 40 >= carta.offsetTop) ? 'none' : 'flex';
+  };
+  window.addEventListener('scroll',sync,{passive:true});
+  sync();
+})();
