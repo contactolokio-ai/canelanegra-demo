@@ -1,17 +1,92 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mis stickers · Canela Negra</title><meta name="robots" content="noindex,nofollow"><link rel="icon" href="../favicon-64.png">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Fraunces:wght@700&display=swap" rel="stylesheet">
-<style>body{margin:0;min-height:100svh;background:#14161c;color:#f2e5d5;font-family:"DM Sans",sans-serif;display:flex;flex-direction:column;align-items:center;padding:28px 20px;box-sizing:border-box;text-align:center}
-img{width:96px;border-radius:50%}h1{font-family:Fraunces,serif;font-size:30px;margin:14px 0 6px}input{width:100%;max-width:340px;font-size:20px;padding:16px;border-radius:999px;border:0;text-align:center;margin:16px 0 10px;box-sizing:border-box}
-button{width:100%;max-width:340px;padding:16px;border-radius:999px;border:0;background:#f2e5d5;color:#14161c;font:700 17px "DM Sans"}
-.card{background:#000;border:1px solid #333;border-radius:24px;padding:22px;margin-top:22px;width:100%;max-width:360px;box-sizing:border-box}.card b{font-family:Fraunces,serif;letter-spacing:.06em}
-.dots{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:16px 0}.dots span{aspect-ratio:1;border-radius:50%;background:rgba(242,229,213,.18)}.dots span.on{background:#f2e5d5}
-.err{color:#ffb4a8;min-height:1.4em}.demo{font-size:12px;opacity:.6;margin-top:auto;padding-top:24px}a{color:#f2e5d5}</style></head><body>
-<img src="../logo-claro.png" alt="Canela Negra cafetería y heladería" style="width:220px;border-radius:0"><h1>Mis stickers</h1><p>Escribe tu RUT y mira cuánto te falta para tu premio.</p>
-<input id="r" inputmode="text" placeholder="12.345.678-5" autocomplete="off"><button onclick="ver()">Ver mis stickers</button><p class="err" id="e"></p><div id="out"></div>
-<p class="demo">Demo de propuesta Lokio · datos de prueba guardados solo en este teléfono · <a href="../">Volver</a></p>
-<script src="../fid.js"></script><script>
-function ver(){const r=FID.limpia(document.getElementById('r').value),e=document.getElementById('e'),o=document.getElementById('out');o.innerHTML='';
-if(!FID.valido(r)){e.textContent='Ese RUT no es válido. Revisa el número y el dígito final.';return}e.textContent='';
-const d=FID.db(),c=d.clientes[r];if(!c){o.innerHTML='<div class="card">Aún no estás registrado. Pídelo en caja en tu próxima visita.</div>';return}
-const n=c.stickers,f=d.meta-n;o.innerHTML=`<div class="card"><b>TARJETA DE FIDELIDAD</b><p>Hola ${c.nombre.split(' ')[0].replace(/[<>&]/g,'')}</p><div class="dots">${Array.from({length:d.meta},(_,i)=>`<span class="${i<n?'on':''}"></span>`).join('')}</div><p>${f<=0?'¡Completaste tu tarjeta! Cobra en caja: '+d.premio:`Llevas ${n} de ${d.meta}. Te faltan ${f} para: ${d.premio}`}</p></div>`}
-</script></body></html>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mis stickers · Canela Negra</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="../favicon-64.png">
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+:root{--n:#284375;--k:#14161c;--c:#f2e5d5;--m:#8a857c}
+*{box-sizing:border-box}
+body{margin:0;min-height:100svh;background:var(--k);color:var(--c);font-family:"DM Sans",system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;padding:28px 18px 36px;text-align:center}
+.logo{width:min(220px,70vw);height:auto;margin-bottom:6px}
+h1{font-family:Fraunces,serif;font-size:28px;margin:10px 0 6px;letter-spacing:-.01em}
+.lead{max-width:340px;color:rgba(242,229,213,.78);font-size:15px;margin:0 0 8px;line-height:1.45}
+.prize-pill{display:inline-block;background:rgba(40,67,117,.55);border:1px solid rgba(242,229,213,.2);color:var(--c);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;margin:10px 0 18px}
+form{width:100%;max-width:360px}
+label{display:block;text-align:left;font-size:13px;font-weight:700;margin:0 0 6px;opacity:.85}
+input{width:100%;font-size:20px;padding:16px 18px;border-radius:999px;border:0;text-align:center;font-family:inherit;background:#fff;color:var(--k)}
+button{width:100%;margin-top:12px;padding:16px;border-radius:999px;border:0;background:var(--c);color:var(--k);font:700 17px "DM Sans";cursor:pointer}
+button:active{transform:scale(.98)}
+.err{color:#ffb4a8;min-height:1.4em;font-size:14px;margin:10px 0 0;font-weight:500}
+#out{width:100%;max-width:360px;margin-top:8px}
+
+.pcard{background:linear-gradient(160deg,#1f2430 0%,#0c0e12 100%);color:var(--c);border-radius:26px;padding:22px 18px 18px;margin-top:14px;box-shadow:0 16px 40px rgba(0,0,0,.45);text-align:left;position:relative;overflow:hidden;border:1px solid rgba(242,229,213,.08)}
+.pcard::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 100% -10%,rgba(40,67,117,.7),transparent 55%);pointer-events:none}
+.pcard .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;position:relative}
+.pcard .brand{font-family:Fraunces,serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+.pcard .prize{background:rgba(242,229,213,.1);border:1px solid rgba(242,229,213,.22);border-radius:999px;padding:5px 10px;font-size:11px;font-weight:700;max-width:58%;text-align:right;line-height:1.25}
+.pcard .who{margin:16px 0 2px;position:relative}
+.pcard .who b{font-family:Fraunces,serif;font-size:22px;display:block}
+.pcard .who small{opacity:.65;font-size:13px}
+.stamps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:18px 0 14px;position:relative}
+.stamps i{aspect-ratio:1;border-radius:50%;border:2px dashed rgba(242,229,213,.32);background:rgba(242,229,213,.06);display:block}
+.stamps i.on{background:var(--c);border-style:solid;border-color:var(--c);box-shadow:inset 0 0 0 7px var(--n)}
+.stamps i.prize-slot{border-color:rgba(255,79,23,.55);background:rgba(255,79,23,.12)}
+.stamps i.prize-slot.on{background:#ff4f17;border-color:#ff4f17;box-shadow:inset 0 0 0 7px #fff}
+.pcard .foot{display:flex;justify-content:space-between;align-items:center;font-size:14px;position:relative;border-top:1px solid rgba(242,229,213,.14);padding-top:12px}
+.pcard .foot strong{font-size:16px}
+.hint{background:rgba(242,229,213,.06);border-radius:18px;padding:16px;margin-top:14px;font-size:14px;color:rgba(242,229,213,.8);line-height:1.4}
+.demo{font-size:12px;opacity:.55;margin-top:auto;padding-top:28px;max-width:360px}
+.demo a{color:var(--c)}
+</style>
+</head>
+<body>
+<img class="logo" src="../logo-claro.png" alt="Canela Negra cafetería y heladería">
+<h1>Mis stickers</h1>
+<p class="lead">Escribe tu RUT y mira tu tarjeta de fidelidad: cuántos sellos llevas y cuántos te faltan.</p>
+<div class="prize-pill">Premio: un capuchino o americano gratis al completar 10</div>
+<form onsubmit="ver();return false">
+  <label for="r">Tu RUT</label>
+  <input id="r" inputmode="text" placeholder="12.345.678-5" autocomplete="off" aria-describedby="e">
+  <button type="submit">Ver mi tarjeta</button>
+</form>
+<p class="err" id="e"></p>
+<div id="out"></div>
+<p class="demo">Demo de propuesta Lokio · datos de prueba guardados solo en este teléfono · <a href="../">Volver al inicio</a></p>
+<script src="../fid.js"></script>
+<script>
+function stamps(n,meta){
+  let h='';
+  for(let i=0;i<meta;i++){
+    h+=`<i class="${i<n?'on':''}${i===meta-1?' prize-slot':''}" aria-hidden="true"></i>`;
+  }
+  return `<div class="stamps" role="img" aria-label="${n} de ${meta} sellos">${h}</div>`;
+}
+function ver(){
+  const r=FID.limpia(document.getElementById('r').value);
+  const e=document.getElementById('e'),o=document.getElementById('out');
+  o.innerHTML='';
+  if(!FID.valido(r)){e.textContent='Ese RUT no es válido. Revisa el número y el dígito final.';return}
+  e.textContent='';
+  const d=FID.db(),c=d.clientes[r];
+  if(!c){
+    o.innerHTML=`<div class="hint">Aún no estás registrado en la tarjeta digital. Pídelo en caja en tu próxima visita: solo necesitas tu RUT, nombre y correo.</div>`;
+    return;
+  }
+  const n=c.stickers,f=d.meta-n,nom=c.nombre.split(' ')[0].replace(/[<>&]/g,'');
+  const status=f<=0
+    ? `¡Completaste tu tarjeta! Cobra en caja: ${d.premio}`
+    : `Llevas ${n} de ${d.meta}. Te faltan ${f} para: ${d.premio}`;
+  o.innerHTML=`<div class="pcard">
+    <div class="top"><div class="brand">Tarjeta de fidelidad</div><div class="prize">${d.premio.replace(/[<>&]/g,'')}</div></div>
+    <div class="who"><b>Hola, ${nom}</b><small>${FID.fmt(r)}</small></div>
+    ${stamps(n,d.meta)}
+    <div class="foot"><span>${status.replace(/[<>&]/g,'')}</span><strong>${n}/${d.meta}</strong></div>
+  </div>`;
+}
+</script>
+</body>
+</html>
