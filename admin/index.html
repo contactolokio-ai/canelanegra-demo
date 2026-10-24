@@ -9,13 +9,13 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--n:#284375;--k:#0d0d0d;--c:#f2e5d5;--m:#5c564c;--line:#d9cfc0;--bg:#f7f4ef;--ok:#1d5b2a;--okbg:#e1f1e3;--bad:#8a1c12;--badbg:#fde3e0}
-*{box-sizing:border-box}html,body{overflow-x:hidden;max-width:100%}body{margin:0;background:var(--bg);color:var(--k);font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:16px;line-height:1.4}
+*{box-sizing:border-box}html,body{overflow-x:clip;max-width:100%;width:100%}body{margin:0;background:var(--bg);color:var(--k);font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:16px;line-height:1.4}
 .demo{background:#b3261e;color:#fff;font-size:11px;text-align:center;padding:6px 10px;font-weight:600;letter-spacing:.03em;text-transform:uppercase}
 header{background:var(--k);color:#fff;display:flex;align-items:center;gap:10px;padding:10px 12px;position:sticky;top:0;z-index:5}
 header img{width:28px;height:28px;border-radius:3px;object-fit:cover}
 header .ttl{flex:1;min-width:0}header .ttl b{display:block;font-size:15px}header .ttl small{opacity:.65;font-size:11px}
 .hb{background:#fff;color:var(--k);border:0;border-radius:3px;padding:10px 12px;min-height:40px;font:700 12px "IBM Plex Sans";cursor:pointer}
-main{max-width:420px;margin:auto;padding:16px 14px 64px}
+main{max-width:420px;margin:auto;padding:16px 14px 64px;width:100%;box-sizing:border-box;min-width:0}
 @media(min-width:768px){main{max-width:720px;padding:24px 28px 72px}.home{grid-template-columns:1fr 1fr}.stats{gap:12px}.stat{padding:16px 18px}.stat b{font-size:30px}.ov{align-items:center}.sh{border-radius:8px;max-width:520px;max-height:86vh}}
 @media(min-width:1024px){main{max-width:960px;padding:28px 36px 80px}.home{grid-template-columns:1fr 1fr;gap:12px}.home button{min-height:88px;padding:18px}.cl{padding:16px 18px}#login{max-width:420px;margin:48px auto}}
 h1,h2{margin:4px 0 6px;letter-spacing:-.02em;line-height:1.15}
@@ -37,15 +37,15 @@ input:focus{outline:none;border-color:var(--n)}
 .btn.sec{background:#fff;color:var(--k);border:1.5px solid var(--k)}.btn.k{background:var(--k)}
 .back{background:none;border:0;font:600 14px "IBM Plex Sans";color:var(--n);padding:0;margin:0 0 8px;cursor:pointer}
 .msg{border-radius:4px;padding:12px 14px;margin-top:12px;font-weight:500;font-size:14px}.ok{background:var(--okbg);color:var(--ok)}.bad{background:var(--badbg);color:var(--bad)}
-.pcard{background:#161616;color:var(--c);border-radius:8px;padding:16px;margin:12px 0;border:1px solid #2a2a2a;position:relative;overflow:hidden}
+.pcard{background:#161616;color:var(--c);border-radius:8px;padding:16px;margin:12px 0;border:1px solid #2a2a2a;position:relative;overflow:hidden;max-width:100%;width:100%;box-sizing:border-box;min-width:0}
 .pcard::before{content:"";position:absolute;inset:0;opacity:.14;background-image:url("../logo-claro.png");background-size:140px;background-repeat:no-repeat;background-position:110% -10%;pointer-events:none}
 .pcard .top{display:flex;justify-content:space-between;gap:8px;position:relative;font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
 .pcard .prize{background:var(--n);color:#fff;border-radius:3px;padding:4px 8px;font-size:11px;font-weight:700;letter-spacing:0;text-transform:none;max-width:55%;text-align:right;line-height:1.25;opacity:1}
 .pcard .who{margin:12px 0 4px;position:relative}.pcard .who b{font-size:18px;display:block}
 .pcard .who small{opacity:.65;font-size:12px}
-.stamps{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:14px 0 10px;position:relative}
-.stamps i{aspect-ratio:1;border-radius:50%;border:1.5px dashed rgba(242,229,213,.35);background:rgba(242,229,213,.06)}
-.stamps i.on{background:var(--c);border-style:solid;border-color:var(--c);box-shadow:inset 0 0 0 5px var(--n)}
+.stamps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin:14px 0 10px;position:relative;width:100%;max-width:100%;min-width:0}
+.stamps i{aspect-ratio:1;width:100%;min-width:0;border-radius:50%;border:1.5px dashed rgba(242,229,213,.35);background:rgba(242,229,213,.06);box-sizing:border-box}
+.stamps i.on{background:var(--c);border-style:solid;border-color:var(--c);box-shadow:inset 0 0 0 4px var(--n)}
 .stamps i.prize-slot{border-color:rgba(255,79,23,.55);background:rgba(255,79,23,.12)}
 .pcard .foot{display:flex;justify-content:space-between;font-size:12px;position:relative;border-top:1px solid #2a2a2a;padding-top:10px;color:rgba(242,229,213,.75)}
 .pcard .foot strong{color:var(--c);font-size:14px}
