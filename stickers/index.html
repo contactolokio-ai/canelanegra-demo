@@ -9,14 +9,15 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}
-body{margin:0;min-height:100svh;background:#0d0d0d;color:#f2e5d5;font-family:"IBM Plex Sans",system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;padding:28px 18px 36px;text-align:center}
+html,body{overflow-x:hidden;max-width:100%}body{margin:0;min-height:100svh;background:#0d0d0d;color:#f2e5d5;font-family:"IBM Plex Sans",system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;padding:28px 18px 36px;text-align:center;box-sizing:border-box}
 .logo{width:min(180px,65vw);height:auto;margin-bottom:8px}
 h1{font-size:24px;margin:8px 0 6px;letter-spacing:-.02em}
 .lead{max-width:340px;color:rgba(242,229,213,.72);font-size:14px;margin:0 0 16px;line-height:1.45}
 form{width:100%;max-width:360px;text-align:left}
 label{display:block;font-size:12px;font-weight:700;margin:0 0 6px;letter-spacing:.04em;text-transform:uppercase;opacity:.8}
-input{width:100%;font-size:18px;padding:14px 16px;border-radius:4px;border:0;text-align:center;font-family:inherit;background:#fff;color:#0d0d0d}
-button{width:100%;margin-top:10px;padding:14px;border-radius:4px;border:0;background:#f2e5d5;color:#0d0d0d;font:700 15px "IBM Plex Sans";cursor:pointer}
+input{width:100%;font-size:18px;padding:14px 16px;min-height:48px;border-radius:4px;border:0;text-align:center;font-family:inherit;background:#fff;color:#0d0d0d}
+button{width:100%;margin-top:10px;padding:14px;min-height:48px;border-radius:4px;border:0;background:#f2e5d5;color:#0d0d0d;font:700 15px "IBM Plex Sans";cursor:pointer}
+@media(min-width:768px){form,#out,.demo,.lead{max-width:420px}body{padding:40px 28px 48px}h1{font-size:28px}}
 .err{color:#ffb4a8;min-height:1.3em;font-size:13px;margin:10px 0 0;font-weight:500;text-align:center}
 #out{width:100%;max-width:360px;margin-top:6px}
 .pcard{background:#161616;border:1px solid #2a2a2a;border-radius:10px;padding:20px 16px;margin-top:12px;text-align:left;position:relative;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.4)}
