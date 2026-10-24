@@ -6,119 +6,96 @@
 <title>Panel · Canela Negra</title>
 <meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="../favicon-64.png">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--n:#284375;--k:#14161c;--c:#f2e5d5;--m:#5b6275;--line:#e4d6c3;--ok:#1d5b2a;--okbg:#e1f1e3;--bad:#8a1c12;--badbg:#fde3e0}
-*{box-sizing:border-box}body{margin:0;background:var(--c);color:var(--k);font-family:"DM Sans",system-ui,sans-serif;font-size:17px;line-height:1.45}
-.demo{background:#b3261e;color:#fff;font-size:12px;text-align:center;padding:6px 10px;font-weight:600;letter-spacing:.02em}
-header{background:var(--k);color:var(--c);display:flex;align-items:center;gap:10px;padding:12px 14px;position:sticky;top:0;z-index:5}
-header img{width:36px;height:36px;border-radius:10px;object-fit:cover}
-header .ttl{flex:1;min-width:0}header .ttl b{display:block;font-family:Fraunces,serif;font-size:18px;line-height:1.1}header .ttl small{opacity:.7;font-size:12px}
-.hb{background:var(--c);color:var(--k);border:0;border-radius:999px;padding:9px 13px;font:700 13px "DM Sans";display:inline-flex;gap:5px;align-items:center}
-.hb svg{width:16px;height:16px}
-main{max-width:440px;margin:auto;padding:18px 16px 72px}
-h1,h2{font-family:Fraunces,serif;margin:4px 0 6px;line-height:1.15;letter-spacing:-.01em}
-h1{font-size:30px}h2{font-size:24px}
-p.s{color:var(--m);margin:0 0 18px;font-size:15px}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
-.stat{background:#fff;border-radius:18px;padding:14px 16px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
-.stat b{display:block;font-family:Fraunces,serif;font-size:28px;color:var(--n);line-height:1}
-.stat span{font-size:13px;color:var(--m);font-weight:500}
-.home{display:grid;gap:12px}
-.home button{background:#fff;border:0;border-radius:22px;padding:18px 16px;text-align:left;font:700 17px "DM Sans";box-shadow:0 4px 16px rgba(0,0,0,.06);display:flex;align-items:flex-start;gap:14px;cursor:pointer;width:100%}
-.home button .ic{width:48px;height:48px;border-radius:16px;background:var(--c);color:var(--n);display:grid;place-items:center;flex:none}
-.home button .ic svg{width:26px;height:26px}
-.home button .tx{flex:1;min-width:0}.home button .tx b{display:block;font-size:18px;margin-bottom:2px}
-.home button .tx small{display:block;font-weight:500;color:var(--m);font-size:13.5px;line-height:1.35}
-.home button.big{background:var(--n);color:#fff;padding:22px 18px}
-.home button.big .ic{background:rgba(242,229,213,.18);color:var(--c)}
-.home button.big .tx small{color:rgba(242,229,213,.8)}
-label{display:block;font-weight:700;margin:14px 0 6px;font-size:14px}
-input[type=text],input[type=email],input[type=password],input[type=number],input:not([type]){width:100%;font-size:18px;padding:15px 18px;border-radius:16px;border:2px solid var(--line);background:#fff;font-family:inherit}
+:root{--n:#284375;--k:#0d0d0d;--c:#f2e5d5;--m:#5c564c;--line:#d9cfc0;--bg:#f7f4ef;--ok:#1d5b2a;--okbg:#e1f1e3;--bad:#8a1c12;--badbg:#fde3e0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--k);font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:16px;line-height:1.4}
+.demo{background:#b3261e;color:#fff;font-size:11px;text-align:center;padding:6px 10px;font-weight:600;letter-spacing:.03em;text-transform:uppercase}
+header{background:var(--k);color:#fff;display:flex;align-items:center;gap:10px;padding:10px 12px;position:sticky;top:0;z-index:5}
+header img{width:28px;height:28px;border-radius:3px;object-fit:cover}
+header .ttl{flex:1;min-width:0}header .ttl b{display:block;font-size:15px}header .ttl small{opacity:.65;font-size:11px}
+.hb{background:#fff;color:var(--k);border:0;border-radius:3px;padding:8px 11px;font:700 12px "IBM Plex Sans";cursor:pointer}
+main{max-width:420px;margin:auto;padding:16px 14px 64px}
+h1,h2{margin:4px 0 6px;letter-spacing:-.02em;line-height:1.15}
+h1{font-size:26px}h2{font-size:22px}
+p.s{color:var(--m);margin:0 0 14px;font-size:14px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:4px;padding:12px 14px}
+.stat b{display:block;font-size:26px;color:var(--n);line-height:1}
+.stat span{font-size:12px;color:var(--m);font-weight:500}
+.home{display:grid;gap:8px}
+.home button{background:#fff;border:1px solid var(--line);border-radius:4px;padding:14px;text-align:left;font:700 16px "IBM Plex Sans";cursor:pointer;width:100%}
+.home button small{display:block;font-weight:500;color:var(--m);font-size:13px;margin-top:3px;line-height:1.35}
+.home button.big{background:var(--k);color:#fff;border-color:var(--k)}
+.home button.big small{color:rgba(255,255,255,.75)}
+label{display:block;font-weight:700;margin:12px 0 5px;font-size:13px}
+input[type=text],input[type=email],input[type=password],input[type=number],input:not([type]){width:100%;font-size:17px;padding:12px 14px;border-radius:4px;border:1.5px solid var(--line);background:#fff;font-family:inherit}
 input:focus{outline:none;border-color:var(--n)}
-.btn{width:100%;margin-top:14px;padding:16px;border:0;border-radius:999px;background:var(--n);color:#fff;font:700 17px "DM Sans";cursor:pointer}
-.btn.sec{background:#fff;color:var(--k);border:2px solid var(--k)}.btn.k{background:var(--k)}.btn.ghost{background:transparent;color:var(--n);border:2px solid var(--n)}
-.back{background:none;border:0;font:600 15px "DM Sans";color:var(--n);padding:0;margin:0 0 8px;cursor:pointer;display:inline-flex;align-items:center;gap:4px}
-.msg{border-radius:16px;padding:14px 16px;margin-top:14px;font-weight:500;font-size:15px}.ok{background:var(--okbg);color:var(--ok)}.bad{background:var(--badbg);color:var(--bad)}
-
-/* Physical loyalty card */
-.pcard{background:linear-gradient(160deg,#1a1d24 0%,#0e1014 100%);color:var(--c);border-radius:24px;padding:20px 18px 18px;margin:14px 0;box-shadow:0 12px 32px rgba(0,0,0,.25);position:relative;overflow:hidden}
-.pcard::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 90% 0%,rgba(40,67,117,.55),transparent 50%);pointer-events:none}
-.pcard .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;position:relative}
-.pcard .brand{font-family:Fraunces,serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
-.pcard .prize{background:rgba(242,229,213,.12);border:1px solid rgba(242,229,213,.25);border-radius:999px;padding:5px 10px;font-size:11px;font-weight:700;max-width:58%;text-align:right;line-height:1.25}
-.pcard .who{margin:14px 0 4px;position:relative}.pcard .who b{font-size:20px;font-family:Fraunces,serif;display:block}
-.pcard .who small{opacity:.7;font-size:13px}
-.stamps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:16px 0 12px;position:relative}
-.stamps i{aspect-ratio:1;border-radius:50%;border:2px dashed rgba(242,229,213,.35);background:rgba(242,229,213,.06);display:grid;place-items:center;position:relative}
-.stamps i.on{background:var(--c);border-style:solid;border-color:var(--c);color:var(--k)}
-.stamps i.on::after{content:"";width:40%;height:40%;border-radius:50%;background:var(--n)}
+.btn{width:100%;margin-top:12px;padding:14px;border:0;border-radius:4px;background:var(--n);color:#fff;font:700 15px "IBM Plex Sans";cursor:pointer}
+.btn.sec{background:#fff;color:var(--k);border:1.5px solid var(--k)}.btn.k{background:var(--k)}
+.back{background:none;border:0;font:600 14px "IBM Plex Sans";color:var(--n);padding:0;margin:0 0 8px;cursor:pointer}
+.msg{border-radius:4px;padding:12px 14px;margin-top:12px;font-weight:500;font-size:14px}.ok{background:var(--okbg);color:var(--ok)}.bad{background:var(--badbg);color:var(--bad)}
+.pcard{background:#161616;color:var(--c);border-radius:8px;padding:16px;margin:12px 0;border:1px solid #2a2a2a;position:relative;overflow:hidden}
+.pcard::before{content:"";position:absolute;inset:0;opacity:.14;background-image:url("../logo-claro.png");background-size:140px;background-repeat:no-repeat;background-position:110% -10%;pointer-events:none}
+.pcard .top{display:flex;justify-content:space-between;gap:8px;position:relative;font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+.pcard .prize{background:var(--n);color:#fff;border-radius:3px;padding:4px 8px;font-size:11px;font-weight:700;letter-spacing:0;text-transform:none;max-width:55%;text-align:right;line-height:1.25;opacity:1}
+.pcard .who{margin:12px 0 4px;position:relative}.pcard .who b{font-size:18px;display:block}
+.pcard .who small{opacity:.65;font-size:12px}
+.stamps{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:14px 0 10px;position:relative}
+.stamps i{aspect-ratio:1;border-radius:50%;border:1.5px dashed rgba(242,229,213,.35);background:rgba(242,229,213,.06)}
+.stamps i.on{background:var(--c);border-style:solid;border-color:var(--c);box-shadow:inset 0 0 0 5px var(--n)}
 .stamps i.prize-slot{border-color:rgba(255,79,23,.55);background:rgba(255,79,23,.12)}
-.stamps i.prize-slot.on{background:#ff4f17;border-color:#ff4f17;color:#fff}
-.stamps i.prize-slot.on::after{background:#fff}
-.pcard .foot{display:flex;justify-content:space-between;align-items:center;font-size:13px;position:relative;border-top:1px solid rgba(242,229,213,.15);padding-top:12px;margin-top:4px}
-.pcard .foot strong{font-size:15px}
-
-.cl{background:#fff;border-radius:22px;padding:16px;margin-bottom:12px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
-.cl .t{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
-.cl .t b{font-size:17px}.cl small{color:var(--m);font-size:13px}
-.badge{background:var(--k);color:var(--c);border-radius:999px;padding:4px 10px;font-size:12px;font-weight:700;white-space:nowrap}
-.badge.go{background:#ff4f17;color:#fff}
-.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.mini{border:0;border-radius:999px;padding:11px 14px;font:700 13.5px "DM Sans";background:var(--c);color:var(--k);cursor:pointer}
-.mini.pri{background:var(--n);color:#fff}.mini.dark{background:var(--k);color:var(--c)}.mini.warn{background:#ff4f17;color:#fff}
-
-.ov{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:flex-end;justify-content:center;z-index:9;padding:0}
+.pcard .foot{display:flex;justify-content:space-between;font-size:12px;position:relative;border-top:1px solid #2a2a2a;padding-top:10px;color:rgba(242,229,213,.75)}
+.pcard .foot strong{color:var(--c);font-size:14px}
+.cl{background:#fff;border:1px solid var(--line);border-radius:4px;padding:14px;margin-bottom:10px}
+.cl .t{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.cl .t b{font-size:16px}.cl small{color:var(--m);font-size:12px}
+.badge{background:var(--k);color:#fff;border-radius:3px;padding:3px 8px;font-size:11px;font-weight:700}
+.badge.go{background:#ff4f17}
+.actions{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.mini{border:1px solid var(--line);border-radius:3px;padding:9px 12px;font:700 12.5px "IBM Plex Sans";background:#fff;color:var(--k);cursor:pointer}
+.mini.pri{background:var(--n);color:#fff;border-color:var(--n)}.mini.warn{background:#ff4f17;color:#fff;border-color:#ff4f17}
+.cl .stamps{margin:10px 0 2px}
+.cl .stamps i{border-color:rgba(13,13,13,.22);background:rgba(13,13,13,.04)}
+.cl .stamps i.on{background:var(--n);border-color:var(--n);box-shadow:inset 0 0 0 5px var(--c)}
+.cl .stamps i.prize-slot{border-color:rgba(255,79,23,.5);background:rgba(255,79,23,.08)}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:flex-end;justify-content:center;z-index:9}
 .ov.on{display:flex}
-.sh{background:#fff;border-radius:28px 28px 0 0;width:100%;max-width:520px;max-height:92vh;overflow:auto;padding:22px 18px 28px}
-.mail{border:1px solid var(--line);border-radius:20px;overflow:hidden;margin:12px 0}
-.mail .h{background:var(--k);color:var(--c);text-align:center;padding:22px 16px}
-.mail .h img{width:160px;height:auto;display:block;margin:0 auto 8px}
-.mail .h .lbl{font-family:Fraunces,serif;letter-spacing:.1em;font-size:12px;opacity:.85}
-.mail .b{padding:18px;background:var(--c)}.mail .b p{margin:0 0 10px}
-.tag{background:#b3261e;color:#fff;font-size:11px;font-weight:700;border-radius:999px;padding:4px 10px;letter-spacing:.04em}
-.meta-line{font-size:14px;line-height:1.55;margin:12px 0 0;background:#faf6f0;border-radius:14px;padding:12px 14px}
-#login{max-width:400px;margin:36px auto;padding:20px;text-align:center}
-#login img{width:240px;height:auto;margin-bottom:8px}
-#login h1{margin-top:8px}
-.check{font-weight:500;display:flex;gap:10px;align-items:flex-start;margin:16px 0 4px}
-.check input{width:20px;height:20px;margin-top:2px;flex:none;accent-color:var(--n)}
-.search{position:relative;margin-bottom:14px}
-.search input{padding-left:44px}
-.search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--m);pointer-events:none}
-.empty{text-align:center;padding:28px 16px;background:#fff;border-radius:22px;color:var(--m)}
-.empty b{display:block;color:var(--k);font-family:Fraunces,serif;font-size:18px;margin-bottom:6px}
-
-.mail .stamps i{border-color:rgba(20,22,28,.25);background:rgba(20,22,28,.06)}
-.mail .stamps i.on{background:var(--k);border-color:var(--k);color:var(--c)}
-.mail .stamps i.on::after{background:var(--c)}
-.mail .stamps i.prize-slot{border-color:rgba(255,79,23,.55);background:rgba(255,79,23,.12)}
-.mail .stamps i.prize-slot.on{background:#ff4f17;border-color:#ff4f17}
-.mail .stamps i.prize-slot.on::after{background:#fff}
-.cl .stamps{margin:12px 0 4px}
-.cl .stamps i{border-color:rgba(20,22,28,.22);background:rgba(20,22,28,.05)}
-.cl .stamps i.on{background:var(--n);border-color:var(--n)}
-.cl .stamps i.on::after{background:var(--c)}
-.cl .stamps i.prize-slot{border-color:rgba(255,79,23,.5);background:rgba(255,79,23,.1)}
-.cl .stamps i.prize-slot.on{background:#ff4f17;border-color:#ff4f17}
-.cl .stamps i.prize-slot.on::after{background:#fff}
+.sh{background:#fff;border-radius:12px 12px 0 0;width:100%;max-width:480px;max-height:92vh;overflow:auto;padding:18px 14px 24px}
+.mail{border:1px solid var(--line);border-radius:6px;overflow:hidden;margin:12px 0}
+.mail .h{background:var(--k);color:var(--c);text-align:center;padding:18px 14px}
+.mail .h img{width:140px;height:auto;display:block;margin:0 auto 6px}
+.mail .h .lbl{font-size:11px;letter-spacing:.1em;opacity:.8}
+.mail .b{padding:16px;background:var(--c)}.mail .b p{margin:0 0 8px}
+.mail .stamps i{border-color:rgba(13,13,13,.25);background:rgba(13,13,13,.06)}
+.mail .stamps i.on{background:var(--k);border-color:var(--k);box-shadow:inset 0 0 0 5px var(--c)}
+.mail .stamps i.prize-slot{border-color:rgba(255,79,23,.55);background:rgba(255,79,23,.1)}
+.tag{background:#b3261e;color:#fff;font-size:10px;font-weight:700;border-radius:3px;padding:3px 8px;letter-spacing:.04em;text-transform:uppercase}
+.meta-line{font-size:13px;line-height:1.5;margin:10px 0 0;background:#faf6f0;border-radius:4px;padding:10px 12px}
+#login{max-width:380px;margin:32px auto;padding:18px;text-align:center}
+#login img{width:200px;height:auto;margin-bottom:6px}
+.check{font-weight:500;display:flex;gap:8px;align-items:flex-start;margin:12px 0 2px;font-size:14px}
+.check input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:var(--n)}
+.search{margin-bottom:12px}
+.empty{text-align:center;padding:22px 14px;background:#fff;border:1px solid var(--line);border-radius:4px;color:var(--m);font-size:14px}
+.empty b{display:block;color:var(--k);font-size:16px;margin-bottom:4px}
 </style>
 </head>
 <body>
-<div class="demo">DEMO de propuesta Lokio · datos de prueba en este teléfono · los correos NO se envían</div>
+<div class="demo">Demo Lokio · datos de prueba · correos NO se envían</div>
 <div id="login">
   <img src="../logo-transparente.png" alt="Canela Negra">
   <h1>Panel Canela Negra</h1>
-  <p class="s">Gestión de clientes y tarjeta de fidelidad digital.</p>
-  <input id="pw" type="password" placeholder="Clave del panel" onkeydown="if(event.key=='Enter')entrar()">
+  <p class="s">Clientes y tarjeta de fidelidad.</p>
+  <input id="pw" type="password" placeholder="Clave" onkeydown="if(event.key=='Enter')entrar()">
   <button class="btn" onclick="entrar()">Entrar al panel</button>
-  <p class="msg bad" id="pe" style="display:none">Clave incorrecta. Revísala e inténtalo otra vez.</p>
+  <p class="msg bad" id="pe" style="display:none">Clave incorrecta.</p>
 </div>
 <div id="app" style="display:none">
   <header>
     <img src="../icon-192.png" alt="">
     <div class="ttl"><b>Fidelización</b><small>Canela Negra · panel</small></div>
-    <button class="hb" onclick="ayuda()" aria-label="Ayuda"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg>Ayuda</button>
+    <button class="hb" onclick="ayuda()">Ayuda</button>
     <button class="hb" onclick="salir()">Salir</button>
   </header>
   <main id="m"></main>
@@ -126,208 +103,143 @@ input:focus{outline:none;border-color:var(--n)}
 <div class="ov" id="ov" onclick="if(event.target==this)cerrar()"><div class="sh" id="sh"></div></div>
 <script src="../fid.js"></script>
 <script>
-const PASS='canela-demo'; // SOLO DEMO
+const PASS='canela-demo';
 const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const I={
-  sello:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>',
-  user:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0M19 8v6M16 11h6"/></svg>',
-  list:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>',
-  mail:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>',
-  cog:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-2.9 1.2V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-2.9-1.2l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1A1.7 1.7 0 0 0 3 15H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.2-2.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1A1.7 1.7 0 0 0 10 4V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 2.9 1.2l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1A1.7 1.7 0 0 0 21 10h.1a2 2 0 1 1 0 4z"/></svg>',
-  search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>'
-};
 let pantalla='inicio';
-
 function stampsHTML(n,meta){
   let h='';
-  for(let i=0;i<meta;i++){
-    const on=i<n?' on':'';
-    const prize=i===meta-1?' prize-slot':'';
-    h+=`<i class="${on}${prize}" aria-hidden="true"></i>`;
-  }
-  return `<div class="stamps" role="img" aria-label="${n} de ${meta} sellos">${h}</div>`;
+  for(let i=0;i<meta;i++) h+=`<i class="${i<n?'on':''}${i===meta-1?' prize-slot':''}"></i>`;
+  return `<div class="stamps">${h}</div>`;
 }
 function cardHTML(c,d){
   const f=d.meta-c.stickers;
-  const status=f<=0?`¡Listo! Premio: ${esc(d.premio)}`:`Lleva ${c.stickers} de ${d.meta} · faltan ${f}`;
-  return `<div class="pcard">
-    <div class="top"><div class="brand">Tarjeta de fidelidad</div><div class="prize">${esc(d.premio)}</div></div>
-    <div class="who"><b>${esc(c.nombre)}</b><small>${FID.fmt(c._rut||'')}${c.correo?' · '+esc(c.correo):''}</small></div>
-    ${stampsHTML(c.stickers,d.meta)}
-    <div class="foot"><span>${status}</span><strong>${c.stickers}/${d.meta}</strong></div>
-  </div>`;
+  const status=f<=0?`Premio: ${esc(d.premio)}`:`${c.stickers} de ${d.meta} · faltan ${f}`;
+  return `<div class="pcard"><div class="top"><span>Fidelidad</span><span class="prize">${esc(d.premio)}</span></div>
+  <div class="who"><b>${esc(c.nombre)}</b><small>${FID.fmt(c._rut||'')}${c.correo?' · '+esc(c.correo):''}</small></div>
+  ${stampsHTML(c.stickers,d.meta)}
+  <div class="foot"><span>${status}</span><strong>${c.stickers}/${d.meta}</strong></div></div>`;
 }
-
 function entrar(){if($('pw').value===PASS){sessionStorage.cn_ok=1;abrir()}else $('pe').style.display='block'}
 function abrir(){$('login').style.display='none';$('app').style.display='block';ir('inicio');if(!localStorage.cn_tour){localStorage.cn_tour=1;tour(0)}}
 function salir(){sessionStorage.removeItem('cn_ok');location.reload()}
-
 function ir(p,x){
   pantalla=p;const d=FID.db(),m=$('m');
-  const back=`<button class="back" onclick="ir('inicio')">‹ Volver al inicio</button>`;
+  const back=`<button class="back" onclick="ir('inicio')">‹ Volver</button>`;
   if(p==='inicio'){
     const n=Object.keys(d.clientes).length;
     const c=Object.values(d.clientes).filter(c=>c.stickers>=d.meta).length;
-    m.innerHTML=`<h1>Hola</h1>
-    <p class="s">Junta stickers por cada compra. Al llegar a ${d.meta}, el cliente gana: <b>${esc(d.premio)}</b>.</p>
-    <div class="stats"><div class="stat"><b>${n}</b><span>clientes registrados</span></div><div class="stat"><b>${c}</b><span>con premio listo</span></div></div>
+    m.innerHTML=`<h1>Inicio</h1>
+    <p class="s">Cada compra = 1 sticker. Al llegar a ${d.meta}: <b>${esc(d.premio)}</b>.</p>
+    <div class="stats"><div class="stat"><b>${n}</b><span>clientes</span></div><div class="stat"><b>${c}</b><span>premio listo</span></div></div>
     <div class="home">
-      <button class="big" onclick="ir('visita')"><span class="ic">${I.sello}</span><span class="tx"><b>Sumar sticker</b><small>Cliente que compró hoy. Escribe su RUT y suma 1 sello.</small></span></button>
-      <button onclick="ir('nuevo')"><span class="ic">${I.user}</span><span class="tx"><b>Nuevo cliente</b><small>Regístralo con RUT, nombre y correo (solo la primera vez).</small></span></button>
-      <button onclick="ir('clientes')"><span class="ic">${I.list}</span><span class="tx"><b>Ver clientes</b><small>Progreso, entregar premio o enviar recordatorio.</small></span></button>
-      <button onclick="ir('ajustes')"><span class="ic">${I.cog}</span><span class="tx"><b>Ajustes y mi correo</b><small>Tu correo de dueño, cantidad de sellos y premio.</small></span></button>
+      <button class="big" onclick="ir('visita')"><b>Sumar sticker</b><small>RUT del cliente que compró hoy</small></button>
+      <button onclick="ir('nuevo')"><b>Nuevo cliente</b><small>RUT, nombre y correo (primera vez)</small></button>
+      <button onclick="ir('clientes')"><b>Ver clientes</b><small>Progreso, premio o recordatorio</small></button>
+      <button onclick="ir('ajustes')"><b>Ajustes y mi correo</b><small>Remitente, sellos y premio</small></button>
     </div>`;
   }
   if(p==='visita'){
-    m.innerHTML=back+`<h2>Sumar sticker</h2>
-    <p class="s">Como la tarjeta física: cada compra = 1 sello. Escribe el RUT y toca el botón.</p>
-    <label for="vr">RUT del cliente</label>
-    <input id="vr" placeholder="12.345.678-5" value="${esc(x||'')}" autocomplete="off" inputmode="text">
-    <button class="btn" onclick="sumar()">Sumar 1 sticker</button>
-    <div id="vm"></div>`;
+    m.innerHTML=back+`<h2>Sumar sticker</h2><p class="s">Escribe el RUT y suma 1 sello.</p>
+    <label for="vr">RUT</label><input id="vr" placeholder="12.345.678-5" value="${esc(x||'')}" autocomplete="off">
+    <button class="btn" onclick="sumar()">Sumar 1 sticker</button><div id="vm"></div>`;
     $('vr').focus();
   }
   if(p==='nuevo'){
-    m.innerHTML=back+`<h2>Nuevo cliente</h2>
-    <p class="s">Solo una vez. Después solo usas su RUT para sumar stickers.</p>
-    <label for="nr">RUT</label><input id="nr" placeholder="12.345.678-5" value="${esc(x||'')}" autocomplete="off">
-    <label for="nn">Nombre</label><input id="nn" placeholder="Ej: Camila Rojas" autocomplete="name">
-    <label for="nc">Correo</label><input id="nc" type="email" inputmode="email" placeholder="camila@correo.cl" autocomplete="email">
-    <label class="check"><input type="checkbox" id="np" checked><span>Sumar su primer sticker ahora (compró hoy)</span></label>
-    <button class="btn" onclick="crear()">Guardar cliente</button>
-    <div id="nm"></div>`;
+    m.innerHTML=back+`<h2>Nuevo cliente</h2><p class="s">Solo la primera vez.</p>
+    <label>RUT</label><input id="nr" placeholder="12.345.678-5" value="${esc(x||'')}" autocomplete="off">
+    <label>Nombre</label><input id="nn" placeholder="Camila Rojas" autocomplete="name">
+    <label>Correo</label><input id="nc" type="email" placeholder="camila@correo.cl" autocomplete="email">
+    <label class="check"><input type="checkbox" id="np" checked><span>Sumar primer sticker ahora</span></label>
+    <button class="btn" onclick="crear()">Guardar cliente</button><div id="nm"></div>`;
   }
   if(p==='clientes'){
     const L=Object.entries(d.clientes).sort((a,b)=>b[1].stickers-a[1].stickers);
-    m.innerHTML=back+`<h2>Ver clientes</h2>
-    <p class="s">Toca <b>Enviar recordatorio</b> para mostrarle cuántos sellos le faltan.</p>
-    <div class="search">${I.search}<input id="q" placeholder="Buscar por nombre o RUT" oninput="filtra()" autocomplete="off"></div>
+    m.innerHTML=back+`<h2>Clientes</h2><p class="s">Envía recordatorio con los sellos que faltan.</p>
+    <div class="search"><input id="q" placeholder="Buscar nombre o RUT" oninput="filtra()" autocomplete="off"></div>
     <div id="lst">${L.length?L.map(([r,c])=>{
-      const f=d.meta-c.stickers;
-      const ready=c.stickers>=d.meta;
+      const f=d.meta-c.stickers,ready=c.stickers>=d.meta;
       return `<div class="cl" data-q="${esc((c.nombre+r).toLowerCase())}">
         <div class="t"><div><b>${esc(c.nombre)}</b><br><small>${FID.fmt(r)} · ${esc(c.correo)}</small></div>
-        <div>${ready?'<span class="badge go">PREMIO LISTO</span>':`<span class="badge">${c.stickers}/${d.meta}</span>`}</div></div>
+        <div>${ready?'<span class="badge go">PREMIO</span>':`<span class="badge">${c.stickers}/${d.meta}</span>`}</div></div>
         ${stampsHTML(c.stickers,d.meta)}
         <div class="actions">${ready
-          ?`<button class="mini warn" onclick="canje('${r}')">Entregar premio y reiniciar</button>`
+          ?`<button class="mini warn" onclick="canje('${r}')">Entregar premio</button>`
           :`<button class="mini pri" onclick="ir('visita','${r}')">Sumar sticker</button>
-            <button class="mini" onclick="correo('${r}')">Enviar recordatorio${f?` · faltan ${f}`:''}</button>`}
-        </div>
+            <button class="mini" onclick="correo('${r}')">Enviar recordatorio${f?` · faltan ${f}`:''}</button>`}</div>
       </div>`;
-    }).join(''):`<div class="empty"><b>Aún no hay clientes</b>Toca “Volver” y luego “Nuevo cliente”.</div>`}</div>`;
+    }).join(''):`<div class="empty"><b>Sin clientes</b>Usa “Nuevo cliente”.</div>`}</div>`;
   }
   if(p==='ajustes'){
-    m.innerHTML=back+`<h2>Ajustes</h2>
-    <p class="s">Tu correo es el remitente que ven tus clientes en los recordatorios.</p>
-    <label for="ac">Tu correo (dueño)</label><input id="ac" type="email" value="${esc(d.correo)}" placeholder="hola@canelanegra.cl">
-    <label for="am">Stickers para el premio</label><input id="am" type="number" min="3" max="20" value="${d.meta}">
-    <label for="ap">Premio</label><input id="ap" value="${esc(d.premio)}">
-    <button class="btn" onclick="guardaAj()">Guardar ajustes</button>
-    <div id="am2"></div>
+    m.innerHTML=back+`<h2>Ajustes</h2><p class="s">Tu correo es el remitente de los recordatorios.</p>
+    <label>Correo dueño</label><input id="ac" type="email" value="${esc(d.correo)}" placeholder="hola@canelanegra.cl">
+    <label>Stickers para premio</label><input id="am" type="number" min="3" max="20" value="${d.meta}">
+    <label>Premio</label><input id="ap" value="${esc(d.premio)}">
+    <button class="btn" onclick="guardaAj()">Guardar</button><div id="am2"></div>
     <button class="btn sec" onclick="ejemplo()">Cargar clientes de ejemplo</button>
-    <button class="btn sec" onclick="if(confirm('¿Borrar todos los datos de prueba? No se puede deshacer.')){localStorage.removeItem(FID.K);ir('inicio')}">Borrar datos de prueba</button>`;
+    <button class="btn sec" onclick="if(confirm('¿Borrar datos de prueba?')){localStorage.removeItem(FID.K);ir('inicio')}">Borrar datos de prueba</button>`;
   }
 }
-
 function msg(id,ok,t){$(id).innerHTML=`<div class="msg ${ok?'ok':'bad'}">${t}</div>`}
-
 function sumar(){
   const r=FID.limpia($('vr').value);
-  if(!FID.valido(r))return msg('vm',0,'Ese RUT no es válido. Revisa los números y el dígito final (puede ser K).');
+  if(!FID.valido(r))return msg('vm',0,'RUT no válido.');
   const d=FID.db(),c=d.clientes[r];
-  if(!c)return $('vm').innerHTML=`<div class="msg bad">Este RUT aún no está registrado.</div><button class="btn k" onclick="ir('nuevo','${r}')">Registrarlo ahora</button>`;
-  if(c.stickers>=d.meta)return msg('vm',0,`${esc(c.nombre)} ya completó su tarjeta. Entrega el premio en “Ver clientes”.`);
+  if(!c)return $('vm').innerHTML=`<div class="msg bad">RUT no registrado.</div><button class="btn k" onclick="ir('nuevo','${r}')">Registrarlo</button>`;
+  if(c.stickers>=d.meta)return msg('vm',0,`${esc(c.nombre)} ya completó. Entrégalo en Clientes.`);
   c.stickers++;d.log.push([r,Date.now()]);FID.save(d);
   const f=d.meta-c.stickers;
-  const view={...c,_rut:r};
-  $('vm').innerHTML=`<div class="msg ok">${f<=0?`¡Listo! ${esc(c.nombre)} completó su tarjeta.`:`¡Listo! ${esc(c.nombre)} lleva ${c.stickers} de ${d.meta}. Le faltan ${f}.`}</div>${cardHTML(view,d)}${f<=0?`<button class="btn k" onclick="ir('clientes')">Ir a entregar premio</button>`:''}`;
+  $('vm').innerHTML=`<div class="msg ok">${f<=0?`Listo. ${esc(c.nombre)} completó.`:`Listo. ${esc(c.nombre)}: ${c.stickers}/${d.meta}. Faltan ${f}.`}</div>${cardHTML({...c,_rut:r},d)}${f<=0?`<button class="btn k" onclick="ir('clientes')">Ir a entregar premio</button>`:''}`;
   $('vr').value='';
 }
-
 function crear(){
   const r=FID.limpia($('nr').value),n=$('nn').value.trim(),c=$('nc').value.trim(),d=FID.db();
-  if(!FID.valido(r))return msg('nm',0,'Ese RUT no es válido. Revisa los números y el dígito final.');
-  if(d.clientes[r])return msg('nm',0,'Ese RUT ya está registrado. Usa “Sumar sticker”.');
+  if(!FID.valido(r))return msg('nm',0,'RUT no válido.');
+  if(d.clientes[r])return msg('nm',0,'Ya registrado. Usa Sumar sticker.');
   if(!n)return msg('nm',0,'Falta el nombre.');
-  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(c))return msg('nm',0,'El correo no se ve bien. Ejemplo: nombre@gmail.com');
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(c))return msg('nm',0,'Correo inválido.');
   const st=$('np').checked?1:0;
   d.clientes[r]={nombre:n,correo:c,stickers:st,alta:Date.now()};FID.save(d);
-  $('nm').innerHTML=`<div class="msg ok">¡${esc(n)} quedó registrado!</div>${cardHTML({nombre:n,correo:c,stickers:st,_rut:r},d)}<button class="btn" onclick="ir('visita')">Sumar otro sticker</button>`;
+  $('nm').innerHTML=`<div class="msg ok">${esc(n)} registrado.</div>${cardHTML({nombre:n,correo:c,stickers:st,_rut:r},d)}`;
   ['nr','nn','nc'].forEach(i=>$(i).value='');
 }
-
-function canje(r){
-  const d=FID.db();
-  if(!confirm(`¿Entregaste el premio a ${d.clientes[r].nombre}? Su tarjeta vuelve a 0.`))return;
-  d.clientes[r].stickers=0;FID.save(d);ir('clientes');
-}
-function filtra(){
-  const q=$('q').value.toLowerCase().replace(/[.\-]/g,'');
-  document.querySelectorAll('.cl').forEach(e=>e.style.display=e.dataset.q.includes(q)?'':'none');
-}
-function guardaAj(){
-  const d=FID.db(),c=$('ac').value.trim();
-  if(c&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(c))return msg('am2',0,'El correo no se ve bien.');
-  d.correo=c;d.meta=Math.max(3,Math.min(20,+$('am').value||10));
-  d.premio=$('ap').value.trim()||'Un capuchino o americano gratis';
-  FID.save(d);msg('am2',1,'Guardado.');
-}
-
+function canje(r){const d=FID.db();if(!confirm(`¿Entregaste el premio a ${d.clientes[r].nombre}?`))return;d.clientes[r].stickers=0;FID.save(d);ir('clientes')}
+function filtra(){const q=$('q').value.toLowerCase().replace(/[.\-]/g,'');document.querySelectorAll('.cl').forEach(e=>e.style.display=e.dataset.q.includes(q)?'':'none')}
+function guardaAj(){const d=FID.db(),c=$('ac').value.trim();if(c&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(c))return msg('am2',0,'Correo inválido.');d.correo=c;d.meta=Math.max(3,Math.min(20,+$('am').value||10));d.premio=$('ap').value.trim()||'Un capuchino o americano gratis';FID.save(d);msg('am2',1,'Guardado.')}
 function correo(r){
   const d=FID.db(),c=d.clientes[r],f=d.meta-c.stickers,nom=c.nombre.split(' ')[0];
-  $('sh').innerHTML=`<span class="tag">VISTA PREVIA · DEMO</span>
-  <div class="meta-line"><b>De:</b> Canela Negra &lt;${esc(d.correo||'(configura tu correo en Ajustes)')}&gt;<br>
-  <b>Para:</b> ${esc(c.correo)}<br>
-  <b>Asunto:</b> ${esc(nom)}, te faltan ${f} stickers para tu premio</div>
-  <div class="mail">
-    <div class="h"><img src="../logo-claro.png" alt="Canela Negra"><div class="lbl">TARJETA DE FIDELIDAD</div></div>
-    <div class="b">
-      <p>Hola ${esc(nom)}:</p>
-      <p>Llevas <b>${c.stickers} de ${d.meta}</b> stickers. ¡Te faltan solo <b>${f}</b> para ${esc(d.premio.toLowerCase())}!</p>
-      ${stampsHTML(c.stickers,d.meta)}
-      <p>Te esperamos en Av. Rondizzoni 2036, frente al Parque O'Higgins.</p>
-      <p style="font-size:13px;color:var(--m);margin:0">Canela Negra · cafetería y heladería</p>
-    </div>
-  </div>
-  <button class="btn" onclick="this.outerHTML='<div class=\\'msg ok\\'>Envío SIMULADO (demo): en la versión real este correo le llega a ${esc(c.correo)} desde tu correo de dueño.</div>'">Enviar recordatorio (simulado)</button>
+  $('sh').innerHTML=`<span class="tag">Vista previa · demo</span>
+  <div class="meta-line"><b>De:</b> Canela Negra &lt;${esc(d.correo||'(pon tu correo en Ajustes)')}&gt;<br>
+  <b>Para:</b> ${esc(c.correo)}<br><b>Asunto:</b> ${esc(nom)}, te faltan ${f} stickers</div>
+  <div class="mail"><div class="h"><img src="../logo-claro.png" alt=""><div class="lbl">TARJETA DE FIDELIDAD</div></div>
+  <div class="b"><p>Hola ${esc(nom)}:</p>
+  <p>Llevas <b>${c.stickers} de ${d.meta}</b>. Te faltan <b>${f}</b> para ${esc(d.premio.toLowerCase())}.</p>
+  ${stampsHTML(c.stickers,d.meta)}
+  <p>Av. Rondizzoni 2036, frente al Parque O'Higgins.</p></div></div>
+  <button class="btn" onclick="this.outerHTML='<div class=\\'msg ok\\'>Envío simulado (demo).</div>'">Enviar recordatorio (simulado)</button>
   <button class="btn sec" onclick="cerrar()">Cerrar</button>`;
   $('ov').classList.add('on');
 }
 function cerrar(){$('ov').classList.remove('on')}
-
-const T={
-  inicio:['Esta es tu pantalla de inicio. Desde aquí haces todo.','El botón azul “Sumar sticker” es el que más vas a usar: cada vez que un cliente compra.','“Nuevo cliente” lo registra con RUT, nombre y correo. “Ver clientes” muestra la tarjeta de cada uno.','En “Ajustes” pones tu correo y el premio. El botón Ayuda siempre está arriba.'],
-  visita:['Escribe el RUT del cliente, con o sin puntos y guion.','Toca “Sumar 1 sticker”. Si el RUT no está registrado, te ofrecemos registrarlo. Verás la tarjeta con los sellos actualizados.'],
-  nuevo:['Escribe RUT, nombre y correo del cliente.','Deja marcado “Sumar su primer sticker” si compró hoy, y toca Guardar.'],
-  clientes:['Aquí ves a todos con su tarjeta de 10 sellos.','Con “Enviar recordatorio” le mandas un correo que le dice cuántos le faltan.','Cuando completa, aparece PREMIO LISTO: tócalo al entregarlo y su tarjeta vuelve a 0.'],
-  ajustes:['Pon tu correo: será el remitente de los recordatorios.','Puedes cambiar cuántos stickers se necesitan y cuál es el premio.']
-};
-function tour(i,lista){
-  lista=lista||[].concat(...Object.values(T));
-  $('sh').innerHTML=`<span class="tag" style="background:var(--n)">Tutorial ${i+1}/${lista.length}</span>
-  <p style="font-size:19px;margin:14px 0">${lista[i]}</p>
-  ${i<lista.length-1?`<button class="btn" id="tn">Siguiente</button>`:'<button class="btn" onclick="cerrar()">¡Entendido!</button>'}
+const T={inicio:['Inicio: Sumar sticker es lo que más usas.','Nuevo cliente = RUT, nombre y correo.','Ver clientes = progreso y recordatorios.','Ajustes = tu correo y el premio.'],
+visita:['Escribe el RUT y toca Sumar 1 sticker.'],nuevo:['Completa RUT, nombre y correo. Guarda.'],
+clientes:['Enviar recordatorio muestra el correo con los sellos que faltan.','PREMIO: al entregar, la tarjeta vuelve a 0.'],
+ajustes:['Pon tu correo como remitente.']};
+function tour(i,lista){lista=lista||[].concat(...Object.values(T));
+  $('sh').innerHTML=`<span class="tag" style="background:var(--n)">Ayuda ${i+1}/${lista.length}</span>
+  <p style="font-size:17px;margin:12px 0">${lista[i]}</p>
+  ${i<lista.length-1?`<button class="btn" id="tn">Siguiente</button>`:'<button class="btn" onclick="cerrar()">Listo</button>'}
   <button class="btn sec" onclick="cerrar()">Cerrar</button>`;
-  if($('tn'))$('tn').onclick=()=>tour(i+1,lista);
-  $('ov').classList.add('on');
+  if($('tn'))$('tn').onclick=()=>tour(i+1,lista);$('ov').classList.add('on');
 }
-function ayuda(){
-  $('sh').innerHTML=`<h2>Ayuda</h2><p class="s">¿Qué quieres repasar?</p>
-  <button class="btn" id="a1">Tutorial de esta pantalla</button>
-  <button class="btn k" id="a2">Tutorial completo</button>
+function ayuda(){$('sh').innerHTML=`<h2>Ayuda</h2><p class="s">¿Qué repasamos?</p>
+  <button class="btn" id="a1">Esta pantalla</button><button class="btn k" id="a2">Todo el panel</button>
   <button class="btn sec" onclick="cerrar()">Cerrar</button>`;
-  $('a1').onclick=()=>tour(0,T[pantalla]);
-  $('a2').onclick=()=>tour(0);
-  $('ov').classList.add('on');
+  $('a1').onclick=()=>tour(0,T[pantalla]);$('a2').onclick=()=>tour(0);$('ov').classList.add('on');
 }
-function ejemplo(){
-  const d=FID.db();
-  [['111111111','Cliente de prueba 1','prueba1@ejemplo.cl',7],
-   ['222222222','Cliente de prueba 2','prueba2@ejemplo.cl',3],
-   ['333333333','Cliente de prueba 3','prueba3@ejemplo.cl',10]
-  ].forEach(([r,n,c,s])=>{if(FID.valido(r))d.clientes[r]={nombre:n,correo:c,stickers:s,alta:Date.now()}});
+function ejemplo(){const d=FID.db();
+  [['111111111','Cliente de prueba 1','prueba1@ejemplo.cl',7],['222222222','Cliente de prueba 2','prueba2@ejemplo.cl',3],['333333333','Cliente de prueba 3','prueba3@ejemplo.cl',10]]
+  .forEach(([r,n,c,s])=>{if(FID.valido(r))d.clientes[r]={nombre:n,correo:c,stickers:s,alta:Date.now()}});
   FID.save(d);ir('clientes');
 }
 if(sessionStorage.cn_ok)abrir();

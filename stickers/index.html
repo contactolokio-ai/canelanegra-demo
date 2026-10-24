@@ -6,83 +6,69 @@
 <title>Mis stickers · Canela Negra</title>
 <meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="../favicon-64.png">
-<link href="https://fonts.googleapis.com/css2?family=Caveat&family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--n:#284375;--k:#14161c;--c:#f2e5d5;--m:#8a857c}
 *{box-sizing:border-box}
-body{margin:0;min-height:100svh;background:var(--k);color:var(--c);font-family:"DM Sans",system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;padding:28px 18px 36px;text-align:center}
-.logo{width:min(220px,70vw);height:auto;margin-bottom:6px}
-h1{font-family:Fraunces,serif;font-size:28px;margin:10px 0 6px;letter-spacing:-.01em}
-.lead{max-width:340px;color:rgba(242,229,213,.78);font-size:15px;margin:0 0 8px;line-height:1.45}
-.prize-pill{display:inline-block;background:rgba(40,67,117,.55);border:1px solid rgba(242,229,213,.2);color:var(--c);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;margin:10px 0 18px}
-form{width:100%;max-width:360px}
-label{display:block;text-align:left;font-size:13px;font-weight:700;margin:0 0 6px;opacity:.85}
-input{width:100%;font-size:20px;padding:16px 18px;border-radius:999px;border:0;text-align:center;font-family:inherit;background:#fff;color:var(--k)}
-button{width:100%;margin-top:12px;padding:16px;border-radius:999px;border:0;background:var(--c);color:var(--k);font:700 17px "DM Sans";cursor:pointer}
-button:active{transform:scale(.98)}
-.err{color:#ffb4a8;min-height:1.4em;font-size:14px;margin:10px 0 0;font-weight:500}
-#out{width:100%;max-width:360px;margin-top:8px}
-
-.pcard{background:linear-gradient(160deg,#1f2430 0%,#0c0e12 100%);color:var(--c);border-radius:26px;padding:22px 18px 18px;margin-top:14px;box-shadow:0 16px 40px rgba(0,0,0,.45);text-align:left;position:relative;overflow:hidden;border:1px solid rgba(242,229,213,.08)}
-.pcard::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 100% -10%,rgba(40,67,117,.7),transparent 55%);pointer-events:none}
-.pcard .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;position:relative}
-.pcard .brand{font-family:Fraunces,serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
-.pcard .prize{background:rgba(242,229,213,.1);border:1px solid rgba(242,229,213,.22);border-radius:999px;padding:5px 10px;font-size:11px;font-weight:700;max-width:58%;text-align:right;line-height:1.25}
-.pcard .who{margin:16px 0 2px;position:relative}
-.pcard .who b{font-family:Fraunces,serif;font-size:22px;display:block}
-.pcard .who small{opacity:.65;font-size:13px}
-.stamps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:18px 0 14px;position:relative}
-.stamps i{aspect-ratio:1;border-radius:50%;border:2px dashed rgba(242,229,213,.32);background:rgba(242,229,213,.06);display:block}
-.stamps i.on{background:var(--c);border-style:solid;border-color:var(--c);box-shadow:inset 0 0 0 7px var(--n)}
-.stamps i.prize-slot{border-color:rgba(255,79,23,.55);background:rgba(255,79,23,.12)}
-.stamps i.prize-slot.on{background:#ff4f17;border-color:#ff4f17;box-shadow:inset 0 0 0 7px #fff}
-.pcard .foot{display:flex;justify-content:space-between;align-items:center;font-size:14px;position:relative;border-top:1px solid rgba(242,229,213,.14);padding-top:12px}
-.pcard .foot strong{font-size:16px}
-.hint{background:rgba(242,229,213,.06);border-radius:18px;padding:16px;margin-top:14px;font-size:14px;color:rgba(242,229,213,.8);line-height:1.4}
-.demo{font-size:12px;opacity:.55;margin-top:auto;padding-top:28px;max-width:360px}
-.demo a{color:var(--c)}
+body{margin:0;min-height:100svh;background:#0d0d0d;color:#f2e5d5;font-family:"IBM Plex Sans",system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;padding:28px 18px 36px;text-align:center}
+.logo{width:min(180px,65vw);height:auto;margin-bottom:8px}
+h1{font-size:24px;margin:8px 0 6px;letter-spacing:-.02em}
+.lead{max-width:340px;color:rgba(242,229,213,.72);font-size:14px;margin:0 0 16px;line-height:1.45}
+form{width:100%;max-width:360px;text-align:left}
+label{display:block;font-size:12px;font-weight:700;margin:0 0 6px;letter-spacing:.04em;text-transform:uppercase;opacity:.8}
+input{width:100%;font-size:18px;padding:14px 16px;border-radius:4px;border:0;text-align:center;font-family:inherit;background:#fff;color:#0d0d0d}
+button{width:100%;margin-top:10px;padding:14px;border-radius:4px;border:0;background:#f2e5d5;color:#0d0d0d;font:700 15px "IBM Plex Sans";cursor:pointer}
+.err{color:#ffb4a8;min-height:1.3em;font-size:13px;margin:10px 0 0;font-weight:500;text-align:center}
+#out{width:100%;max-width:360px;margin-top:6px}
+.pcard{background:#161616;border:1px solid #2a2a2a;border-radius:10px;padding:20px 16px;margin-top:12px;text-align:left;position:relative;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.4)}
+.pcard::before{content:"";position:absolute;inset:0;opacity:.16;background-image:url("../logo-claro.png");background-size:160px;background-repeat:no-repeat;background-position:108% -8%;pointer-events:none}
+.pcard .brand{font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.7;position:relative}
+.pcard .prize{display:inline-block;margin:12px 0;font-size:12px;font-weight:700;background:#284375;color:#fff;padding:5px 10px;border-radius:3px;position:relative}
+.pcard .who{font-size:20px;font-weight:700;position:relative}
+.pcard .who small{display:block;font-size:13px;font-weight:500;opacity:.6;margin-top:2px}
+.stamps{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:16px 0;position:relative}
+.stamps i{aspect-ratio:1;border-radius:50%;border:1.5px dashed rgba(242,229,213,.35);background:rgba(242,229,213,.05)}
+.stamps i.on{background:#f2e5d5;border-style:solid;border-color:#f2e5d5;box-shadow:inset 0 0 0 6px #284375}
+.stamps i.prize{border-color:rgba(255,79,23,.6);background:rgba(255,79,23,.12)}
+.pcard .foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #2a2a2a;padding-top:12px;font-size:13px;position:relative;color:rgba(242,229,213,.75)}
+.pcard .foot strong{color:#f2e5d5;font-size:15px}
+.hint{background:#161616;border:1px solid #2a2a2a;border-radius:6px;padding:14px;margin-top:12px;font-size:14px;color:rgba(242,229,213,.8);line-height:1.4;text-align:left}
+.demo{font-size:11px;opacity:.5;margin-top:auto;padding-top:28px;max-width:360px}
+.demo a{color:#f2e5d5}
 </style>
 </head>
 <body>
-<img class="logo" src="../logo-claro.png" alt="Canela Negra cafetería y heladería">
+<img class="logo" src="../logo-claro.png" alt="Canela Negra">
 <h1>Mis stickers</h1>
-<p class="lead">Escribe tu RUT y mira tu tarjeta de fidelidad: cuántos sellos llevas y cuántos te faltan.</p>
-<div class="prize-pill">Premio: un capuchino o americano gratis al completar 10</div>
+<p class="lead">Escribe tu RUT y mira tu tarjeta: cuántos sellos llevas y cuántos te faltan para el capuchino o americano gratis.</p>
 <form onsubmit="ver();return false">
-  <label for="r">Tu RUT</label>
-  <input id="r" inputmode="text" placeholder="12.345.678-5" autocomplete="off" aria-describedby="e">
+  <label for="r">RUT</label>
+  <input id="r" inputmode="text" placeholder="12.345.678-5" autocomplete="off">
   <button type="submit">Ver mi tarjeta</button>
 </form>
 <p class="err" id="e"></p>
 <div id="out"></div>
-<p class="demo">Demo de propuesta Lokio · datos de prueba guardados solo en este teléfono · <a href="../">Volver al inicio</a></p>
+<p class="demo">Demo Lokio · datos solo en este teléfono · <a href="../">Volver</a></p>
 <script src="../fid.js"></script>
 <script>
 function stamps(n,meta){
   let h='';
-  for(let i=0;i<meta;i++){
-    h+=`<i class="${i<n?'on':''}${i===meta-1?' prize-slot':''}" aria-hidden="true"></i>`;
-  }
-  return `<div class="stamps" role="img" aria-label="${n} de ${meta} sellos">${h}</div>`;
+  for(let i=0;i<meta;i++) h+=`<i class="${i<n?'on':''}${i===meta-1?' prize':''}"></i>`;
+  return `<div class="stamps">${h}</div>`;
 }
 function ver(){
   const r=FID.limpia(document.getElementById('r').value);
   const e=document.getElementById('e'),o=document.getElementById('out');
   o.innerHTML='';
-  if(!FID.valido(r)){e.textContent='Ese RUT no es válido. Revisa el número y el dígito final.';return}
+  if(!FID.valido(r)){e.textContent='RUT no válido. Revisa el dígito final.';return}
   e.textContent='';
   const d=FID.db(),c=d.clientes[r];
-  if(!c){
-    o.innerHTML=`<div class="hint">Aún no estás registrado en la tarjeta digital. Pídelo en caja en tu próxima visita: solo necesitas tu RUT, nombre y correo.</div>`;
-    return;
-  }
+  if(!c){o.innerHTML='<div class="hint">Aún no estás en la tarjeta digital. Pídelo en caja: RUT, nombre y correo.</div>';return}
   const n=c.stickers,f=d.meta-n,nom=c.nombre.split(' ')[0].replace(/[<>&]/g,'');
-  const status=f<=0
-    ? `¡Completaste tu tarjeta! Cobra en caja: ${d.premio}`
-    : `Llevas ${n} de ${d.meta}. Te faltan ${f} para: ${d.premio}`;
+  const status=f<=0?`Completaste la tarjeta. Cobra en caja: ${d.premio}`:`Llevas ${n} de ${d.meta}. Faltan ${f} para: ${d.premio}`;
   o.innerHTML=`<div class="pcard">
-    <div class="top"><div class="brand">Tarjeta de fidelidad</div><div class="prize">${d.premio.replace(/[<>&]/g,'')}</div></div>
-    <div class="who"><b>Hola, ${nom}</b><small>${FID.fmt(r)}</small></div>
+    <div class="brand">Canela Negra · fidelidad</div>
+    <div class="prize">${d.premio.replace(/[<>&]/g,'')}</div>
+    <div class="who">${nom}<small>${FID.fmt(r)}</small></div>
     ${stamps(n,d.meta)}
     <div class="foot"><span>${status.replace(/[<>&]/g,'')}</span><strong>${n}/${d.meta}</strong></div>
   </div>`;
